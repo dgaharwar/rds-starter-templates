@@ -21,7 +21,6 @@ Parameters:
     - true
     - false
     ConstraintDescription: Value must be boolean value.
-    Default: true
     Description: Indicates that minor engine upgrades are applied automatically to
       the DB instance during the maintenance window. The default value is true.
     Type: String
@@ -31,7 +30,6 @@ Parameters:
     Description: The number of days during which automatic DB snapshots are retained.
     Type: String
   DBInstanceClass:
-    Default: db.t2.medium
     Description: The name of the compute and memory capacity classes of the DB instance.
     Type: String
   DBName:
@@ -54,7 +52,6 @@ Parameters:
       decrypt SSM RDS Master password parameter.
     Type: String
   IAMRoleName:
-    Default: RDS-Starter-Template-LambdaExecutionRole
     Description: Name of the IAM Role that should be used when creating the IAM Role
       that Lambda functions will be assuming
     Type: String
@@ -66,12 +63,10 @@ Parameters:
     - true
     - false
     ConstraintDescription: Value must be boolean value.
-    Default: true
     Description: Specifies if the database instance is a multiple Availability Zone
       deployment.
     Type: String
   SSMParameterName:
-    Default: RDSMasterPassword
     Description: Parameter name under which to store the master password for the RDS
       instace.
     Type: String
