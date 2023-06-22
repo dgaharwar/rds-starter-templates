@@ -47,7 +47,6 @@ Parameters:
   DBInstanceClass:
     Description: The name of the compute and memory capacity classes of the DB instance.
     Type: String
-    Default: db.t2.medium
     
   DBName:
     Description: The name of the database inside the instance.
@@ -82,12 +81,10 @@ Parameters:
   SSMParameterName:
     Description: Parameter name under which to store the master password for the RDS instace. 
     Type: String
-    Default: RDSMasterPassword
   
   IAMRoleName:
     Description: Name of the IAM Role that should be used when creating the IAM Role that Lambda functions will be assuming
     Type: String
-    Default: RDS-Starter-Template-LambdaExecutionRole
 
   IAMManagedPolicyName:
     Description: Name of the IAM policy that will be created that allows users to decrypt SSM RDS Master password parameter. 
