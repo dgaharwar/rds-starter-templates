@@ -35,7 +35,6 @@ Parameters:
     Description: Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window. The default value is true.
     Type: String
     AllowedValues: [true, false]
-    Default: true
     ConstraintDescription: "Value must be boolean value."
   
   BackupRetentionPeriod:
@@ -75,7 +74,6 @@ Parameters:
     Description: Specifies if the database instance is a multiple Availability Zone deployment.
     Type: String
     AllowedValues: [true, false]
-    Default: true
     ConstraintDescription: "Value must be boolean value."
 
   SSMParameterName:
