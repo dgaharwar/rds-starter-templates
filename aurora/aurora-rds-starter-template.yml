@@ -25,6 +25,7 @@ Parameters:
     Type: String
     AllowedValues: [true, false]
     ConstraintDescription: "Value must be boolean value."
+    Default: false
 
   AutoMinorVersionUpgrade:
     Description: Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window. The default value is true.
@@ -59,33 +60,38 @@ Parameters:
     Type: String
     AllowedValues: [aurora, aurora-mysql, aurora-postgresql]
     ConstraintDescription: "Please specify either a aurora, aurora-mysql, aurora-postgresql engine for the RDS instance."
+    Default: aurora-postgresql
 
   DBSubnetGroupName:
     Description: A DB subnet group to associate with the DB instance. 
     Type: String
+    Default: default
   
   VPCSecurityGroups:
     Description: Specifies if the database instance is a multiple Availability Zone deployment.
     Type: String
     ConstraintDescription: "Please provide valid ids for the security group(s)."
+    Default: sg-2b299333
 
   MasterUsername:
     Description: The master user name for the DB instance.
     Type: String
+    Default: admin
 
   SSMParameterName:
     Description: Parameter name under which to store the master password for the RDS instace. 
     Type: String
-    Default: RDSMasterPassword
+    Default: Password123
   
   IAMRoleName:
     Description: Name of the IAM Role that should be used when creating the IAM Role that Lambda functions will be assuming
     Type: String
-    Default: RDS-Starter-Template-LambdaExecutionRole
+    Default: dg-ec2-rds-role
 
   IAMManagedPolicyName:
     Description: Name of the IAM policy that will be created that allows users to decrypt SSM RDS Master password parameter. 
     Type: String
+    Default: AdministratorAccess
 
 
 Resources:
