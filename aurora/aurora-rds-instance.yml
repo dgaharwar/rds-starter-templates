@@ -23,6 +23,7 @@ Parameters:
     Type: String
     AllowedValues: [true, false]
     ConstraintDescription: "Value must be boolean value."
+    Default: false
 
   AutoMinorVersionUpgrade:
     Description: Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window. The default value is true.
@@ -59,24 +60,29 @@ Parameters:
     Type: String
     AllowedValues: [aurora, aurora-mysql, aurora-postgresql]
     ConstraintDescription: "Please specify either a aurora, aurora-mysql, aurora-postgresql engine for the RDS instance."
-
+    Default: aurora-postgresql
+    
   DBSubnetGroupName:
     Description: A DB subnet group to associate with the DB instance. 
     Type: String
+    Default: default
   
   VPCSecurityGroups:
     Description: Specifies if the database instance is a multiple Availability Zone deployment.
     Type: List<AWS::EC2::SecurityGroup::Id>
     ConstraintDescription: "Please provide valid ids for the security group(s)."
+    Default: [sg-2b299333]
 
   MasterUsername:
     Description: The master user name for the DB instance.
     Type: String
+    Default: admin
 
   MasterUserPassword:
     Description: The master password for the DB instance.
     Type: String
     NoEcho: true
+    Default: Password123
 
 
 Mappings:
